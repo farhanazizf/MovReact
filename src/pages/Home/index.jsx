@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  // Autocomplete,
   Box,
   Card,
   CardActionArea,
@@ -26,8 +27,6 @@ const Home = () => {
   const [totalRes, setTotalRes] = React.useState("0");
   const [searchText, setSearchText] = React.useState("");
   const [valuez] = useDebounce(searchText, 600);
-  // const reduxState = useSelector((state) => state);
-  // console.log(reduxState);
 
   React.useEffect(() => {
     const getListMov = async () => {
@@ -107,9 +106,6 @@ const Home = () => {
               No poster in this movies
             </Typography>
           )}
-          {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
         </Box>
       </Modal>
 
@@ -117,7 +113,7 @@ const Home = () => {
         <h2>Search Movies</h2>
       </Styled.TitleWrapper>
       <Styled.SearchWrapper>
-        <Styled.Search
+        {/* <Styled.Search
           // {...params}
           label="Search Movies"
           onChange={(ex) => setSearchText(ex.target.value)}
@@ -125,27 +121,28 @@ const Home = () => {
             // ...params.InputProps,
             type: "search",
           }}
-        />
-        {/* <Autocomplete
+        /> */}
+        <Styled.Autocomplete
           freeSolo
-          id="free-solo-2-demo"
           disableClearable
-          // options={top100Films.map((option) => option.title)}
+          onSelect={(ex) => setSearchText(ex.target.value)}
+          options={firstData.map((option) => option.Title)}
           renderInput={(params) => (
-            <TextField
+            <Styled.Search
               {...params}
-              label="Search input"
+              onChange={(ex) => setSearchText(ex.target.value)}
+              label="Search Movies"
               InputProps={{
                 ...params.InputProps,
                 type: "search",
               }}
             />
           )}
-        /> */}
+        />
       </Styled.SearchWrapper>
       <Styled.CardWrapper>
-        {firstData.map((vals) => (
-          <Styled.Card key={vals.imdbID}>
+        {firstData.map((vals, i) => (
+          <Styled.Card key={`${vals.imdbID}${i}`}>
             <Card sx={{ width: 345 }}>
               <CardActionArea onClick={() => handleOpenModals(vals.Poster)}>
                 <CardMedia
@@ -160,37 +157,12 @@ const Home = () => {
                   <Typography gutterBottom variant="h6" component="div">
                     {vals.Title} ({vals.Year})
                   </Typography>
-                  {/* <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography> */}
                 </CardContent>
               </CardActionArea>
-              {/* <CardActions>
-                <Button size="small" color="primary">
-                  See Poster
-                </Button>
-              </CardActions> */}
             </Card>
           </Styled.Card>
         ))}
       </Styled.CardWrapper>
-      {/* <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to re load.
-          </p>
-          <a
-            className="App-link"
-            href="https:/ /reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div> */}
     </MainLayout>
   );
 };

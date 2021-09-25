@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Autocomplete, TextField } from "@mui/material";
 import styled from "styled-components";
 
 const Styled = {
@@ -7,8 +7,11 @@ const Styled = {
     justify-content: center;
     margin: 3rem 0;
   `,
-  Search: styled(TextField)`
+  Autocomplete: styled(Autocomplete)`
     width: 60%;
+  `,
+  Search: styled(TextField)`
+    width: 100%;
   `,
   CardWrapper: styled.div`
     display: flex;

@@ -96,66 +96,6 @@ const MovieDetails = () => {
           </Styled.RightWrapper>
         </Styled.MainWrapper>
       ) : null}
-      {/* <div className="row justify-content-center bg-dark text-white">
-        <div className="col-md-9">
-          <p className="h2">{movies?.Title} </p>
-        </div>
-        <div className="col-md-3">
-          <p className="h2" style={{ float: "right" }}>
-            <i className="fas fa-star" style={{ color: "#e4bb24" }}></i>
-            {movies?.imdbRating} / 10
-          </p>
-        </div>
-      </div>
-      <div className="row justify-content-center bg-dark text-white">
-        <div className="col-md-9">
-          <p>
-            {movies?.Rated} <i className="fas fa-grip-lines-vertical"></i>{" "}
-            {movies?.Runtime} <i className="fas fa-grip-lines-vertical"></i>{" "}
-            {movies?.Year} <i className="fas fa-grip-lines-vertical"></i>{" "}
-            {movies?.Production} ({movies?.Country})
-          </p>
-        </div>
-        <div className="col-md-3">
-          <p style={{ float: "right" }}>Metascore {movies?.Metascore}</p>
-        </div>
-      </div>
-      <div className="row justify-content-center mt-4 mb-4">
-        <div className="col-md-4">
-          <img src={movies?.Poster} className="card-img-top" alt="img" />
-        </div>
-        <div className="col-md-8">
-          <ul className="list-group">
-            <li className="list-group-item">{movies?.Plot}</li>
-            <li className="list-group-item">
-              <div className="h5">
-                Genre
-                <p>&emsp;&emsp; {movies?.Genre}</p>
-              </div>
-              <div className="h5">
-                Released
-                <p>&emsp;&emsp; {movies?.Released}</p>
-              </div>
-              <p className="h5">
-                Director
-                <p>&emsp;&emsp; {movies?.Director}</p>
-              </p>
-              <p className="h5">
-                Writers
-                <p>&emsp;&emsp; {movies?.Writer}</p>
-              </p>
-              <p className="h5">
-                Actors
-                <p>&emsp;&emsp; {movies?.Actors}</p>
-              </p>
-              <p className="h5">
-                Box Office
-                <p>&emsp;&emsp; {movies?.BoxOffice}</p>
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div> */}
     </MainLayout>
   );
 };
